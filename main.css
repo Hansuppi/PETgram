@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Style the navbar */
+.icon-bar {
+    overflow: hidden;
+    background-color: #698c5f;
+    width: 100%;
+}
+
+/* Navbar links */
+.icon-bar a {
+    float: left;
+    text-align: center;
+    width: 15%;
+    padding: 12px 0;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 36px;
+}
+
+/* Navbar links on mouse-over */
+.icon-bar a:hover {
+    background-color: #5d7953;
+}
+
+/* Active/current link */
+.icon-bar a.active {
+    background-color: #3f6941;
+}
+
+/* Style the input container */
+.icon-bar .search-container {
+    float: right;
+}
+
+/* Style the input field inside the navbar */
+.icon-bar input[type=text] {
+    padding: 10px;
+    margin-top: 8px;
+    font-size: 25px;
+    border: none;
+}
+
+/* Style the button inside the input container */
+.icon-bar .search-container button {
+    float: right;
+    padding: 10px;
+    margin-right: 16px;
+    background: #698c5f;
+    color: white;
+    font-size: 36px;
+    border: none;
+    cursor: pointer;
+}
+
+.icon-bar .search-container button:hover {
+    background: #5d7953;
+}
+
+/* Add responsiveness - On small screens, display the navbar vertically instead of horizontally */
+@media screen and (max-width: 1050px) {
+    .icon-bar .search-container  {
+        float: none;
+        text-align: center;
+        font-size: 30px;
+    }
+    .icon-bar a, .icon-bar input[type=text], .icon-bar .search-container button {
+        float: none;
+        display: block;
+        text-align: center;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+        font-size: 30px;
+    }
+}
+
