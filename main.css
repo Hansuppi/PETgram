@@ -2,6 +2,14 @@ body {
     margin: 0;
 }
 
+
+.icon-bar .logo {
+    float: left;
+    width: 7.5%;
+    margin-left: 13px;
+    margin-top: 10px;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -21,7 +29,7 @@ body {
     padding: 12px 0;
     transition: all 0.3s ease;
     color: white;
-    font-size: 36px;
+    font-size: 45px;
 }
 
 /* Navbar links on mouse-over */
@@ -37,6 +45,7 @@ body {
 /* Style the input container */
 .icon-bar .search-container {
     float: right;
+    margin-top: 8px;
 }
 
 /* Style the input field inside the navbar */
@@ -59,13 +68,13 @@ body {
     cursor: pointer;
 }
 
-.icon-bar .search-container button:hover {
-    background: #5d7953;
-}
-
 /* Add responsiveness - On small screens, display the navbar vertically instead of horizontally */
 @media screen and (max-width: 1050px) {
-    .icon-bar .search-container  {
+
+    .logo {
+        visibility: hidden;
+    }
+    .icon-bar .search-container {
         float: none;
         text-align: center;
         font-size: 30px;
