@@ -1,0 +1,19 @@
+.asetusbox{
+   
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+    z-index: 1;
+    background-color: #cfb789;
+    text-align: center;
+    height: 100vh;
+    line-height: 200px;
+    font-weight: 600;
+    font-size: 30px;
+    color: #5a3f23;
+    
+}
+ul{
+    list-style-type: none;
+    margin-top: 0px;
+}
