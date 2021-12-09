@@ -1,0 +1,112 @@
+body{
+    font-family:'Roboto', sans-serif;
+
+}
+*{
+    box-sizing: revert;
+}
+
+.signup-box{
+width: 360px;
+height: 517px;
+background-color: rgb(255, 247, 242);
+z-index: 99;
+border-radius: 8px;
+margin-top: -25px;
+}
+
+.login-box{
+    width: 360px;
+    height: 274px;
+    border-radius: 4px;
+    background-color: rgb(255, 247, 242) ;
+    z-index: 99;
+    border-radius: 8px;
+    margin-top: -50px;
+    
+}
+.tausta{
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content:  center;
+  flex-direction: column;
+}
+
+.tausta::before{
+    content: "";
+    background-image: url("kuvat/child-g9a398829b_1920.jpg");
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.79;
+   
+}
+
+h1{
+    position: relative;
+    text-align: center;
+    margin-top: 0%;
+    padding-top: 15px;
+    color: rgb(1, 59, 1);
+}
+h5{
+    text-align: center;
+    font-size: 14px;
+}
+
+form{
+    width: 300px;
+    margin-left: 20px;
+}
+
+form label{
+    display: flex;
+    margin-top: 20px;
+    font-size: 14px
+}
+
+form input{
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border: 1px solid rgb(0, 155, 0);
+    border-radius: 6px;
+    outline: none;
+}
+
+input[type="button"]{
+    width: 320px;
+    height: 35px;
+    margin-top: 22px;
+    border: none;
+    background-color: forestgreen;
+    color: rgb(255, 255, 255);
+    font-size:  18px;
+
+}
+p{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.sisaan{
+    text-align: center;
+    color: rgb(0, 29, 6);
+    background-color: rgb(255 247 242 / 55%);
+    font-size: 15px;
+    margin-top: 10px;
+    z-index: 99;
+    border-radius: 2px;
+}
+
+.sisaan a{
+    color: forestgreen;
+    font-weight: 700;
+}
