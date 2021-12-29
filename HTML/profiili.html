@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profiili</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../CSS/main.css">
+    <link rel="stylesheet" href="../CSS/profiili.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<style>
+    img {
+        height: auto;
+        max-width: 100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+<nav>
+    <div class="icon-bar">
+        <img class="logo "src="../kuvat/PETgramlogo.png" style="height: 60px">
+        <a href="etusivu.html" id="koti"><i class="fa fa-home"></i></a>
+        <a class="active" href="profiili.html"><i class="fa fa-user"></i></a>
+        <a href="asetukset.html"><i class="fa fa-gear"></i></a>
+        <div class="search-container">
+            <form action="/action_page.php">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+
+<div class="profiili">
+    <img src="" id="imagePreview">
+    <input type="file"  accept="image/*" name="image" id="myFileInput" style="display: none;">
+    <p><label for="myFileInput" style="cursor: pointer;">Upload profilepicture <br> (refresh page to save)</label></p>
+</div>
+
+<div class="row">
+<div class="column">
+    <p>NAME</p>
+    <input type="text">
+</div>
+
+<div class="column">
+    <p>INFO</p>
+    <input type="text">
+</div>
+    <button id="button" type="submit">Save</button>
+</div>
+
+<div id="formtree" style="visibility: hidden">
+    <form id="form" enctype="multipart/form-data" method="post">
+        <div class="form-group">
+            <input type="file"  accept="image/*" name="image" id="image" style="display: none;">
+            <p><label for="image" style="cursor: pointer;" class="fa fa-plus"></label></p>
+        </div>
+        <div class="form-group">
+            <button class="btn">Upload</button>
+        </div>
+    </form>
+    <button id="remove" onclick="remove()" class="btn">Remove</button>
+</div>
+
+<div id="result"></div>
+
+<script>
+    document.querySelector("#myFileInput").addEventListener("change", function() {
+        const reader = new FileReader();
+
+        reader.addEventListener("load", () => {
+            localStorage.setItem("recent-image", reader.result);
+        });
+
+        reader.readAsDataURL(this.files[0]);
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const recentImageDataUrl = localStorage.getItem("recent-image");
+
+        if (recentImageDataUrl) {
+            document.querySelector("#imagePreview").setAttribute("src", recentImageDataUrl);
+        }
+    });
+</script>
+<script>
+    let form = document.getElementById("form")
+    let parentDiv = document.getElementById("result");
+
+    form.addEventListener("submit", function(event){
+        event.preventDefault();
+
+        let reader = new FileReader();
+        let name = document.getElementById("image").files[0].name
+
+        reader.addEventListener("load", function(){
+            if(this.result && localStorage) {
+                window.localStorage.setItem(name, this.result)
+                /*alert("image stored");*/
+                parentDiv.innerHTML = "";
+                showImages();
+            }
+            /*else {
+                alert("load not successful");
+            }*/
+        });
+        reader.readAsDataURL(document.getElementById("image").files[0]);
+        console.log(name);
+    });
+
+    function showImages() {
+        for(let i = 0; i<window.localStorage.length; i++) {
+            let res = window.localStorage.getItem(window.localStorage.key(i));
+            let image = new Image();
+            image.src = res;
+
+            parentDiv.appendChild(image);
+        }
+    }
+
+    showImages();
+
+    function remove(){
+        window.localStorage.clear();
+        parentDiv.innerHTML = "";
+        showImages();
+    }
+</script>
+
+</body>
+</html>

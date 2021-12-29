@@ -37,7 +37,7 @@ margin-top: -25px;
 
 .tausta::before{
     content: "";
-    background-image: url("kuvat/child-g9a398829b_1920.jpg");
+    background-image: url("../kuvat/child-g9a398829b_1920.jpg");
     background-size: cover;
     position: absolute;
     top: 0px;

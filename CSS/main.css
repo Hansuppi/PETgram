@@ -1,7 +1,26 @@
 body {
     margin: 0;
+    background-color: #cde3b1;
 }
 
+#formtree {
+    text-align: center;
+    background-color: #cde3b1;
+    padding-top: 35px;
+    padding-bottom: 40px;
+}
+
+#result {
+    background-color: white;
+}
+
+.fa-plus {
+    text-align: center;
+    color: #698b5f;
+    font-size: 70px;
+    border: none;
+    cursor: pointer;
+}
 
 .icon-bar .logo {
     float: left;
@@ -25,7 +44,7 @@ body {
 .icon-bar a {
     float: left;
     text-align: center;
-    width: 15%;
+    width: 10%;
     padding: 12px 0;
     transition: all 0.3s ease;
     color: white;
@@ -88,5 +107,24 @@ body {
         padding: 14px;
         font-size: 30px;
     }
+
+    #koti {
+        padding-right: 65px;
+    }
+
+    @media screen and (max-width: 800px) {
+
+        #koti {
+            padding-right: 55px;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+
+        #koti {
+            padding-right: 45px;
+        }
+    }
+
 }
 

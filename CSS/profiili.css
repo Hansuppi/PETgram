@@ -1,0 +1,59 @@
+body {
+    background-color: #cde3b1;
+}
+
+.profiili {
+    text-align: center;
+    float: left;
+    background-color: #cde3b1;
+    padding: 20px;
+    color: white;
+    font-size: 15px;
+    font-family: "Lucida Console";
+}
+
+#imagePreview {
+    width: 250px;
+    height: 250px;
+    float: left;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+.row {
+    padding-left: 350px;
+    background-color: #cde3b1;
+    font-size: 15px;
+    font-family: "Lucida Console";
+    color: white;
+    padding-top: 35px;
+}
+
+#button {
+    margin-top: 15px;
+}
+
+@media screen and (max-width: 1050px) {
+
+    #koti {
+        padding-right: 65px;
+    }
+
+    @media screen and (max-width: 800px) {
+
+        #koti {
+            padding-right: 55px;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+
+        #koti {
+            padding-right: 45px;
+        }
+    }
+
+}
+
