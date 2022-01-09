@@ -1,0 +1,26 @@
+body {
+    text-align: center;
+}
+
+h2, h1 {
+    font-family: "Courier New";
+}
+
+p, a {
+    font-family: "Times New Roman";
+}
+
+a:link, a:visited {
+    background-color: #c8bcaf;
+    color: black;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 50px;
+    margin-top: 30px;
+}
+
+a:hover, a:active {
+    background-color: #aa9672;
+}
