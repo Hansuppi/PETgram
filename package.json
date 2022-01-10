@@ -1,0 +1,28 @@
+{
+  "name": "petgram",
+  "version": "1.0.0",
+  "description": "",
+  "main": "login.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node login.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hansuppi/PETgram.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hansuppi/PETgram/issues"
+  },
+  "homepage": "https://github.com/Hansuppi/PETgram#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.14.0",
+    "method-override": "^3.0.0",
+    "mysql": "^2.18.1"
+  }
+}
