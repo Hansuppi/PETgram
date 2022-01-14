@@ -2,29 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Etusivu</title>
+    <title>home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../CSS/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-
-<style>
-    img {
-        height: auto;
-        max-width: 100%;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-</style>
-
-<body>
+   
 <nav>
     <div class="icon-bar">
-        <img class="logo" src="../kuvat/PETgramlogo.png" style="height: 60px">
+        <img class="logo" src="kuvat/PETgramlogo.png" style="height: 60px">
         <a class="active" href="#"><i id="koti" class="fa fa-home"></i></a>
-        <a href="profiili.html"><i class="fa fa-user"></i></a>
-        <a href="asetukset.html"><i class="fa fa-gear"></i></a>
+        <a href="/profiili.ejs"><i class="fa fa-user"></i></a>
+        <a href="/asetukset.ejs"><i class="fa fa-gear"></i></a>
         <div class="search-container">
             <form action="/action_page.php">
                 <input type="text" placeholder="Search.." name="search">

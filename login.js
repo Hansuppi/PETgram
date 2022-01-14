@@ -3,6 +3,7 @@ var mysql = require('mysql');
 var express = require('express');
 var session = require('express-session');
 var path = require('path');
+const routes = require('./routes');
 
 var connection = mysql.createConnection({
 	host     : 'mysql.metropolia.fi',
@@ -12,6 +13,19 @@ var connection = mysql.createConnection({
 });
 
 var app = express();
+
+// Set the default views directory to html folder
+app.set('views', path.join(__dirname, 'html'));
+
+// Set the folder for css & java scripts
+app.use(express.static(path.join(__dirname,'CSS')));
+app.use(express.static(path.join(__dirname, 'node_modules')));
+
+// Set the view engine to ejs
+app.set('view engine', 'ejs');
+
+app.use('/', routes);
+
 app.use(session({
 	secret: 'secret',
 	resave: true,
@@ -21,7 +35,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get('/', function(request, response) {
-	response.sendFile(path.join(__dirname + '/login.html'));
+	response.sendFile(path.join(__dirname + '/login.ejs'));
 });
 
 app.post('/auth', function(request, response) {
@@ -47,11 +61,16 @@ app.post('/auth', function(request, response) {
 app.get('/home', function(request, response) {
 	if (request.session.loggedin) {
 		
-        response.sendFile(path.join(__dirname + 'HTML/etusivu.html'));
+        return response.sendFile(path.join(__dirname + '/html/home.ejs'));
 	} else {
-		response.send('Please login to view this page!');
+		response.send('Please login or create account to view this page!');
 	}
 	response.end();
 });
 
-app.listen(3000);
+
+app.listen(3000, () => {
+  console.log('Server is running at localhost:3000');
+});
+
+
